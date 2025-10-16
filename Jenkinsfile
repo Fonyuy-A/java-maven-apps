@@ -63,21 +63,21 @@ pipeline {
             steps {
                 script {
                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                            sh "docker build -t Fonyuy-A/java-maven-app:1.6 ."
+                            sh "docker build -t fonyuya/java-maven-app:1.6 ."
                    }    
                 }     
             } 
         }
         stage('Docker Scan Image') {
             steps {
-                sh "trivy image Fonyuy-A/java-maven-app:1.6"
+                sh "trivy image fonyuya/java-maven-app:1.6"
             }
         }
         stage('Push Docker Image') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                    sh "docker push Fonyuy-A/java-maven-app:1.6"
+                    sh "docker push fonyuya/java-maven-app:1.6"
                     }
                 } 
             }
