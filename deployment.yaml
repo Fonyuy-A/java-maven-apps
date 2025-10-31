@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: java-maven-app
-          image: Fonyuy-A/java-maven-app:1.6 # this image will be used by containers in the cluster
+          image: fonyuya/java-maven-app:1.6 # this image will be used by containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
